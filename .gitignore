@@ -1,5 +1,5 @@
 .env
-magento/
+/magento/*
 /vendor/
 /node_modules/
 /var/
