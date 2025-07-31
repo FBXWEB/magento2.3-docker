@@ -1,0 +1,15 @@
+.env
+magento/
+/vendor/
+/node_modules/
+/var/
+/generated/
+/.env
+.idea/
+/magento/var/*
+/magento/generated/*
+auth.json
+phpserver.log
+.DS_Store
+.idea/
+*.log
