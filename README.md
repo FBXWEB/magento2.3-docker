@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/magento/magento2/develop/dev/tests/static/testsuite/Magento/TestFramework/_files/MagentoLogo.png" height="100" alt="Magento Logo">
+  <img src="https://user-images.githubusercontent.com/1086448/44016593-30e04b72-9ef3-11e8-9741-23f3b4e87ee0.png" height="100" alt="Magento Logo">
   <img src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png" height="100" alt="Docker Logo">
 </p>
 
