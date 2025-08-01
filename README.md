@@ -69,16 +69,30 @@ https://commercemarketplace.adobe.com/customer/accessKeys/
 cp .env.example .env
 ```
 
+Atenção, se você alterar as variáveis no .env:
+- MAGENTO_UID=
+- MAGENTO_GID=
+
+Abra o arquivo ".docker/php/Dockerfile" e altere as seguintes variáveis com o mesmo user e grupo:
+- ENV USER=
+- ENV GROUP=
+
+IMPORTANTE! Para maior controle, utilize aqui o mesmo user e group de seu ambiente para que você possa criar e editar arquivos sem erro de permissão;
+Os arquivos "composer-lock-magento.json" e "composer-magento.json" estão preparados para serem copiados na construção dos containers, se você quiser alterar ou adicionar alguma coisa no magento antes da construção e instalação do Magento, altere esses arquivos; 
+
 ### 3. Inicie a stack
 
-OBS: Para rodar o fluxo completo de instalação rode o comando abaixo na pasta onde você clonou a stack.  
+OBS: Para rodar o fluxo completo de instalação rode os comandos abaixo na pasta onde você clonou a stack.  
 - Total de 10 passos que serão automaticamente realizados, no final você receberá o link de acesso da loja com sample data
 
 ```bash
-make createMagento
+make create && 
+make build  && 
+make start &&
+make install
 ```
 
-Este comando irá:
+Esses comandos irão:
 
 - Criar os diretórios necessários
 - Buildar a stack
@@ -89,7 +103,7 @@ Este comando irá:
 
 ---
 
-## 🔑 Credenciais padrão
+## Credenciais padrão 
 
 | Item           | Valor                  |
 |----------------|------------------------|
@@ -99,9 +113,11 @@ Este comando irá:
 | Senha Admin    | `Admin123@`            |
 | E-mail Admin   | `admin@fbxweb.com`     |
 
+OBS: Você poderá alterar esses dados no arquivo .env
+
 ---
 
-## 🛠️ Comandos úteis via `make`
+## Comandos úteis via `make`
 
 | Comando        | Ação                                                        |
 |----------------|-------------------------------------------------------------|
@@ -117,7 +133,7 @@ Este comando irá:
 
 ---
 
-## 🧪 Requisitos
+## Requisitos
 
 - Docker 20+
 - Docker Compose 1.29+
@@ -126,13 +142,13 @@ Este comando irá:
 
 ---
 
-## 🧤 Dica para devs
+## Dica para devs
 
 O sistema já foi configurado com permissões corretas utilizando `UID/GID` do host no momento do build. Isso garante que os arquivos possam ser editados com seu usuário local sem conflitos.
 
 ---
 
-## 🧙‍♂️ Por que usar essa stack?
+## Por que usar essa stack?
 
 - Elimina os erros comuns de instalação
 - Setup rápido e funcional em minutos
@@ -142,13 +158,13 @@ O sistema já foi configurado com permissões corretas utilizando `UID/GID` do h
 
 ---
 
-## 🤝 Contribuindo
+## Contribuindo
 
 Pull requests são bem-vindos! Se você tiver sugestões, melhorias ou ajustes para a stack, sinta-se à vontade para colaborar.
 
 ---
 
-## 🧡 Desenvolvido por
+## Desenvolvido por
 
 **FBXWEB AGENCY**  
 _Soluções criativas e código de elite para sua loja Magento._  
