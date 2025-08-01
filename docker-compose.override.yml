@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  php:
+    volumes:
+      - type: bind
+        source: ./magento
+        target: /var/www/html
+        consistency: cached

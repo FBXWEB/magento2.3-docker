@@ -1,7 +1,7 @@
 FROM php:7.3-fpm
 
 # Variáveis de ambiente
-
+# ATENÇÃO: adicione o mesmo usuário e grupo que está no arquivo .env
 ENV USER=fbxweb
 ENV GROUP=fbxweb
 
